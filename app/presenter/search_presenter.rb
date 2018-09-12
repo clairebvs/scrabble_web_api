@@ -14,14 +14,12 @@ class SearchPresenter
     response = @conn.get("/api/v1/inflections/en/#{@word}")
 
     @parsing = JSON.parse(response.body, symbolize_names: true)[:results].map do |word_data|
-      # require "pry"; binding.pry
       Word.new(word_data)
     end
   end
 
   def root_word
-    require "pry"; binding.pry
-    @parsing[0][:inflectionOf][0][:id]
+    @parsing[0].root
   end
 
   def message
