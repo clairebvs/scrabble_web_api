@@ -8,7 +8,7 @@ describe 'a user' do
     fill_in :word, with: 'foxes'
     click_on "Validate Word"
 
-    # expect(current_path).to eq("/search")
+    expect(current_path).to eq("/search")
     expect(page).to have_content("'foxes' is a valid word and its root form is 'fox'.")
 
     expect(page).to have_css(".validate_word")
@@ -20,7 +20,7 @@ describe 'a user' do
     fill_in :word, with: 'foxez'
     click_on "Validate Word"
 
-    # expect(current_path).to eq("/search")
+    expect(current_path).to eq("/search")
     expect(page).to have_content("'foxez' is not a valid word.")
 
     expect(page).to have_css(".validate_word")
