@@ -23,7 +23,7 @@ class SearchPresenter
   end
 
   def message
-    if words.include?('404')
+    if @parsing == nil
       "'#{@word}' is not a valid word."
     else
       root = root_word

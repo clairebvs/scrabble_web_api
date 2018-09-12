@@ -2,7 +2,10 @@ require 'rails_helper'
 
 describe 'GET request to “/api/v1/games/1”' do
   it 'returns a JSON response with game params and score' do
+    user = create(:user)
     game = create(:game, id: 1)
+    plays = create(:play)
+
 
     get "/api/v1/games/1"
 
